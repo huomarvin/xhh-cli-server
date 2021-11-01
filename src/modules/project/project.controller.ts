@@ -1,4 +1,4 @@
-import { CreateProjectDto } from './../../models/project.dto';
+import { CreateProjectDto } from '../../models/project.dto';
 import { ProjectService } from './project.service';
 import { Body, Controller, Get, Post } from '@nestjs/common';
 

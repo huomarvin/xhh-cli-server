@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ProjectModule } from './src/project/project.module';
+import { ProjectModule } from './modules/project/project.module';
+import { CommandModule } from './modules/command/command.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -13,8 +12,9 @@ import { ProjectModule } from './src/project/project.module';
       pass: process.env.MONGO_DB_PASS,
     }),
     ProjectModule,
+    CommandModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
